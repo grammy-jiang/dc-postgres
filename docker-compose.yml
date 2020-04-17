@@ -3,7 +3,7 @@ services:
     postgres:
         container_name: dc-postgres
         env_file:
-            postgres.env
+            - postgres.env
         image: postgres:alpine
         networks:
             - nw-postgres
