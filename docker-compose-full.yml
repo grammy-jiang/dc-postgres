@@ -1,0 +1,39 @@
+version: "3"
+services:
+    postgres:
+        container_name: dc-postgres
+        env_file:
+            - postgres.env
+        image: postgres:alpine
+        networks:
+            - nw-postgres
+        ports:
+            - "5432:5432"
+        restart: always
+        tty: true
+        volumes:
+            - ./postgres-data:/var/lib/postgresql/data
+            - ./postgres-initdb.d:/docker-entrypoint-initdb.d
+    pgadmin4:
+        container_name: dc-postgres-pgadmin4
+        env_file:
+            - postgres-pgadmin4.env
+        image: dpage/pgadmin4:latest
+        networks:
+            - nw-postgres
+        ports:
+            - "80:80"
+            - "433:433"
+        restart: always
+        tty: true
+        volumes:
+            - "./pgadmin-pgadmin:/var/lib/pgadmin"
+            # - "./pgadmin-config_local.py:/pgadmin4/config_local.py"
+            # - "./pgadmin-servers.json:/pgadmin4/servers.json"
+            # - "./pgadmin-server.cert:/certs/server.cert"
+            # - "./pgadmin-server.key:/certs/server.key"
+
+networks:
+    nw-postgres:
+        driver: bridge
+
