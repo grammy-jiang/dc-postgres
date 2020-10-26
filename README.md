@@ -81,7 +81,18 @@ Password for user user:
 psql (13.0)
 Type "help" for help.
 
-user_db=#
+user_db=# \l
+                             List of databases
+   Name    | Owner | Encoding |  Collate   |   Ctype    | Access privileges
+-----------+-------+----------+------------+------------+-------------------
+ postgres  | user  | UTF8     | en_US.utf8 | en_US.utf8 |
+ template0 | user  | UTF8     | en_US.utf8 | en_US.utf8 | =c/user          +
+           |       |          |            |            | user=CTc/user
+ template1 | user  | UTF8     | en_US.utf8 | en_US.utf8 | =c/user          +
+           |       |          |            |            | user=CTc/user
+ user_db   | user  | UTF8     | en_US.utf8 | en_US.utf8 |
+(4 rows)
+
 ```
 
 # Reference
