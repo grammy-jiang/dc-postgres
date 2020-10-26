@@ -76,7 +76,7 @@ PostgreSQL home page: <https://www.postgresql.org/>
 ```
 
 ```console
-foo@bar:~$ docker run --rm -it postgres:alpine psql --host <host> --username <user> <database>
+foo@bar:~$ docker run --rm -it postgres:alpine psql --host <host> --username <username> <database_name>
 Password for user user:
 psql (13.0)
 Type "help" for help.
