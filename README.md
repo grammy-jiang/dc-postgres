@@ -107,3 +107,4 @@ user_db=# \l
 * [postgres - Docker Hub](https://hub.docker.com/_/postgres/)
 * [dpage/pgadmin4 - Docker Hub](https://hub.docker.com/r/dpage/pgadmin4)
   * [Container Deployment — pgAdmin 4 4.27 documentation](https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html)
+* [Psql](http://postgresguide.com/utilities/psql.html)
