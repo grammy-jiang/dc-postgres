@@ -75,6 +75,15 @@ Report bugs to <pgsql-bugs@lists.postgresql.org>.
 PostgreSQL home page: <https://www.postgresql.org/>
 ```
 
+```console
+foo@bar:~$ docker run --rm -it postgres:alpine psql --host 192.168.1.126 --username user user_db
+Password for user user:
+psql (13.0)
+Type "help" for help.
+
+user_db=#
+```
+
 # Reference
 
 * [postgres - Docker Hub](https://hub.docker.com/_/postgres/)
