@@ -81,6 +81,13 @@ Password for user user:
 psql (13.0)
 Type "help" for help.
 
+user_db=# help
+You are using psql, the command-line interface to PostgreSQL.
+Type:  \copyright for distribution terms
+       \h for help with SQL commands
+       \? for help with psql commands
+       \g or terminate with semicolon to execute query
+       \q to quit
 user_db=# \l
                              List of databases
    Name    | Owner | Encoding |  Collate   |   Ctype    | Access privileges
