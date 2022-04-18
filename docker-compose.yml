@@ -4,6 +4,12 @@ services:
         container_name: dc-postgres
         env_file:
             - postgres.env
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready"]
+            interval: 1s
+            timeout: 1s
+            retries: 5
+            start_period: 5s
         image: postgres:alpine
         networks:
             - nw-postgres
