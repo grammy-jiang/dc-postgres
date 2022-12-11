@@ -5,7 +5,9 @@ services:
         env_file:
             - postgres.env
         healthcheck:
-            test: ["CMD-SHELL", "pg_isready"]
+            test: 
+                - "CMD-SHELL"
+                - "pg_isready --dbname $${POSTGRES_DB} --username $${POSTGRES_USER}"
             interval: 1s
             timeout: 1s
             retries: 5
@@ -24,4 +26,3 @@ services:
 networks:
     nw-postgres:
         driver: bridge
-
