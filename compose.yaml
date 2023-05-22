@@ -27,6 +27,28 @@ services:
             - ./postgres-initdb.d:/docker-entrypoint-initdb.d
     # Container Deployment — pgAdmin 4 7.1 documentation
     # https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html
+    pgadmin4:
+        container_name: dc-postgres-pgadmin4
+        depends_on:
+            postgres:
+                condition: service_healthy
+        env_file:
+            - postgres-pgadmin4.env
+        image: dpage/pgadmin4:latest
+        networks:
+            - nw-postgres
+        ports:
+            - "80:80"
+            - "443:443"
+        restart: always
+        tty: true
+        volumes:
+            - "./pgadmin-pgadmin:/var/lib/pgadmin"
+            # - "./pgadmin-config_local.py:/pgadmin4/config_local.py"
+            # - "./pgadmin-servers.json:/pgadmin4/servers.json"
+            # - "./pgadmin-server.cert:/certs/server.cert"
+            # - "./pgadmin-server.key:/certs/server.key"
+
 networks:
     nw-postgres:
         driver: bridge
