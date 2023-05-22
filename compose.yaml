@@ -1,6 +1,8 @@
 version: "3.8"
 
 services:
+    # postgres - Official Image | Docker Hub
+    # https://hub.docker.com/_/postgres
     postgres:
         container_name: dc-postgres
         env_file:
