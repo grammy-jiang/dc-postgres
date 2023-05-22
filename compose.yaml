@@ -46,7 +46,7 @@ services:
         tty: true
         volumes:
             # the owern and group of the volume of ./pgadmin-pgadmin should be change to pgadmin
-            # install -d -g "$(docker run --env-file postgres-pgadmin4.env --rm dpage/pgadmin4:latest id -g root)" -o "$(docker run --env-file postgres-pgadmin4.env --rm dpage/pgadmin4:latest id -u pgadmin)" ./pgadmin-pgadmin
+            # the pgadmin image can't use docker run command to fetch the user and group id, like postgres
             - "./pgadmin-pgadmin:/var/lib/pgadmin"
             # - "./pgadmin-config_local.py:/pgadmin4/config_local.py"
             # - "./pgadmin-servers.json:/pgadmin4/servers.json"
